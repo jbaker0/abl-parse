@@ -1,6 +1,9 @@
-pub enum Statement {
-    Procedure(Box<Vec<Statement>>),
-    Function(Box<Vec<Statement>>),
+#[derive(Clone, Debug, PartialEq)]
+pub enum Statement<'a> {
+    Procedure(Box<Vec<Statement<'a>>>),
+    Function(Box<Vec<Statement<'a>>>),
+    Include(Include<'a>),
+    Comment(&'a str),
 }
 
 #[derive(Clone, Debug, PartialEq)]
