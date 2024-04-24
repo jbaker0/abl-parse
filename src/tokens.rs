@@ -8,9 +8,9 @@ pub enum Statement<'a> {
 
 #[derive(Clone, Debug, PartialEq)]
 pub struct Include<'a> {
-    pub(crate) path: &'a str,
-    pub(crate) content: Option<&'a str>,
-    pub(crate) arguments: Vec<&'a str>,
+    pub path: &'a str,
+    pub content: Option<&'a str>,
+    pub arguments: Vec<&'a str>,
 }
 
 impl Default for Include<'_> {
